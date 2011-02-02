@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/LoginScrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent" >
+<LinearLayout android:id="@+id/loginlinearlayout"
+			  android:layout_width="fill_parent" 
+              android:layout_height="fill_parent" 
+              android:orientation="vertical" >
+     
+    <ImageView android:id="@+id/NPNGLogo"
+    		   android:layout_width="fill_parent"
+    		   android:layout_height="wrap_content"
+    		   android:gravity="center_horizontal"
+    		   android:src="@drawable/npng" /> 
+              
+    <TableLayout android:id="@+id/LoginDeviceLayout"
+    			 android:layout_width="fill_parent"
+    			 android:layout_height="fill_parent"
+        		 android:stretchColumns="1" >
+        		 
+        <TableRow>
+	        <TextView android:id="@+id/LoginText"
+	              	  android:layout_width="wrap_content"
+	              	  android:layout_height="wrap_content"
+	              	  style="@style/TextStyle"
+	              	  android:text="@string/home_tab" />
+        </TableRow>
+        
+        <TableRow>
+	        <TextView android:id="@+id/loginText"
+	              	  android:layout_width="wrap_content"
+	              	  android:layout_height="wrap_content"
+	              	  android:gravity="center_horizontal"
+	              	  style="@style/TextStyle"
+	              	  android:text="@string/home_login" />
+        </TableRow>
+        
+        <TableRow>
+            <EditText android:id="@+id/editInput" android:layout_width="fill_parent"
+                	  android:singleLine="true" android:gravity="center"
+                	  android:cursorVisible="true" android:editable="true" 
+                	  android:inputType="textCapSentences" />
+        </TableRow> 
+        
+    </TableLayout>
+    
+</LinearLayout>
+</ScrollView>

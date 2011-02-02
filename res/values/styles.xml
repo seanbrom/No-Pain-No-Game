@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextStyle" parent="@android:style/TextAppearance.Small">
+        <item name="android:textColor">@color/light_green</item>
+    </style>
+    
+    <style name="MedStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textColor">@color/light_green</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="LargeStyle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">@color/light_green</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    
+    <style name="NumStyle" parent="@android:style/TextAppearance.Large">
+        <item name="android:textColor">#ff00cccc</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">50px</item>
+    </style>
+    
+         
+</resources>

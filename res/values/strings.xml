@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello">No Pain No Game!</string>
+    <string name="my_app_name">NPNG</string>
+    <string name="home_tab">\n\nWelcome to No Pain No Game, an app that allows you to control your television right from your Android phone. By using the pedometer to track the number of steps you take throughout the day, you can earn more TV time.</string>
+
+
+    <!-- PEDOMETER STRINGS -->
+    <string name="notification_subtitle">Counting your steps</string>
+
+    <string name="started">Pedometer started.</string>
+    <string name="stopped">Pedometer stopped.</string>
+
+    <string name="steps">steps</string>
+    <string name="kilometers">kilometers</string>
+    <string name="miles">miles</string>
+    <string name="steps_per_minute">steps / minute</string>
+    <string name="kilometers_per_hour">kilometers / hour</string>
+    <string name="miles_per_hour">miles / hour</string>
+    <string name="calories_burned">calories burned</string>
+    <string name="centimeters">centimeters</string>
+    <string name="inches">inches</string>
+    <string name="kilograms">kilograms</string>
+    <string name="pounds">pounds</string>
+
+    <string name="desired_pace">Desired pace:</string>
+    <string name="desired_speed">Desired speed:</string>
+
+    <string name="pause">Pause</string>
+    <string name="resume">Resume</string>
+    <string name="reset">Reset</string>
+    
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="activity_settings">Pedometer Settings</string>
+    <string name="steps_settings_title">Basic Settings</string>
+    <string name="sensitivity_setting">Sensitivity</string>
+    <string name="sensitivity_setting_details">Calibrate the step detector</string>
+    <string name="sensitivity_setting_title">Select sensitivity level</string>
+    <string name="very_high">very high</string>
+    <string name="high">high</string>
+    <string name="medium">medium</string>
+    <string name="low">low</string>
+    <string name="very_low">very low</string>
+    <string name="operation_level_setting">Operational level</string>
+    <string name="operation_level_setting_details">Some OS versions prevent using sensors when the screen is off; set the level that works for you</string>
+    <string name="operation_level_setting_title">Select operational level</string>
+    <string name="run_in_background">Normal (just try running in background)</string>
+    <string name="keep_screen_on">Screen on (keep screen dim)</string>
+    <string name="wake_up">Aggressive (wake up when I turn screen off)</string>
+    <string name="units_setting">Units</string>
+    <string name="units_setting_details">Imperial or metric units</string>
+    <string name="units_setting_title">Choose your units</string>
+    <string name="units_metric">metric (kilometers)</string>
+    <string name="units_imperial">imperial (miles)</string>
+    <string name="step_length_setting">Step length</string>
+    <string name="step_length_setting_details">For distance, speed &amp; calorie calculation</string>
+    <string name="step_length_setting_title">Enter your step length</string>
+    <string name="body_weight_setting">Body weight</string>
+    <string name="body_weight_setting_details">For calorie calculation</string>
+    <string name="body_weight_setting_title">Enter your body weight</string>
+    <string name="exercise_type_setting">Exercise type</string>
+    <string name="exercise_type_setting_details">For calorie calculation</string>
+    <string name="exercise_type_setting_title">Choose exercise type</string>
+    <string name="exercise_type_running">running</string>
+    <string name="exercise_type_walking">walking</string>
+    <string name="maintain_setting">Maintain pace/speed</string>
+    <string name="maintain_setting_details">Maintaining a desired a pace/speed</string>
+    <string name="maintain_setting_title">Maintain:</string>
+    <string name="maintain_nothing">nothing</string>
+    <string name="maintain_pace">pace</string>
+    <string name="maintain_speed">speed</string>
+    <string name="voice_settings_title">Voice</string>
+    <string name="voice_setting">Speak</string>
+    <string name="voice_setting_details">Enable/disable voice notification</string>
+    <string name="speaking_interval_setting">Interval</string>
+    <string name="speaking_interval_setting_details">Voice notification interval</string>
+    <string name="interval_15_seconds">15 seconds</string>
+    <string name="interval_30_seconds">30 seconds</string>
+    <string name="interval_1_minute">1 minute</string>
+    <string name="interval_2_minutes">2 minutes</string>
+    <string name="interval_5_minutes">5 minutes</string>
+    <string name="interval_10_minutes">10 minutes</string>
+    <string name="tell_what">What to tell</string>
+    <string name="tell_steps_setting">Steps</string>
+    <string name="tell_steps_setting_details"></string>
+    <string name="tell_pace_setting">Pace</string>
+    <string name="tell_pace_setting_details">steps / minute</string>
+    <string name="tell_distance_setting">Distance</string>
+    <string name="tell_distance_setting_details">kilometers or miles</string>
+    <string name="tell_speed_setting">Speed</string>
+    <string name="tell_speed_setting_details">km/h or mph</string>
+    <string name="tell_calories_setting">Calories burned</string>
+    <string name="tell_calories_setting_details"></string>
+    <string name="tell_fasterslower_setting">Faster/slower</string>
+    <string name="tell_fasterslower_setting_details">Helps you maintain your desired pace or speed (interval doesn\'t apply)</string>
+    <string name="incorrect_step_length">Incorrect step length format! Go to the Settings to change it!</string>
+
+    <string name="quit">Quit</string>
+    
+    <string name="local_service_connected">Pedometer Service Connected.</string>
+    <string name="local_service_disconnected">Pedometer Service Disconnected.</string>
+
+	<string name="home_login">\n\nEnter your username below to get started.\n</string>
+	<string name="home_activity">Home Activity</string>
+	<string name="pedometer_activity">Pedometer Activity</string>
+	<string name="learn_activity">Learn Activity</string>
+	<string name="watch_activity">Watch Activity</string>
+	
+	<string name="watch_start">Press \'Start\' to enable your TV.</string>
+	<string name="watch_stop">\nPress \'Stop\' to disable your TV and preserve your TV time.</string>
+	<string name="watch_start_button">Start</string>
+	<string name="watch_stop_button">Stop</string>
+	<string name="learn_button">Fetch New Info</string>
+	
+	
+	<!-- WEIGHTCHART STRINGS -->
+	<string name="about_weight_chart">About Weight Chart</string> 
+	<string name="add">Add</string> 
+	<string name="all_entries_deleted">All entries are now deleted</string> 
+	<string name="app_name">Weight Chart</string> 
+	<string name="average">Average of last seven days</string> 
+	<string name="bmi_value">BMI: %.2f</string> 
+	<string name="bmi_with_height">BMI (height: %s)</string> 
+	<string name="cancel">Cancel</string> 
+	<string name="close">Close</string> 
+	<string name="cm">cm</string> 
+	<string name="count_entries">Count entries</string> 
+	<string name="date_legend">Day of week and day of month</string> 
+	<string name="delete">Delete</string> 
+	<string name="delete_all_entries">Delete all entries</string> 
+	<string name="drag_chart_to_scroll">Drag chart to scroll</string> 
+	<string name="edit">Edit</string> 
+	<string name="end_date_input">End date:</string> 
+	<string name="entries">Entries</string> 
+	<plurals name="entry_count">
+	<item quantity="one">1 entry</item> 
+	<item quantity="other">%d entries</item> 
+	</plurals>
+	<string name="entry_edited">Entry edited</string> 
+	<string name="export">Export</string> 
+	<string name="export_csv">Export entries as CSV</string> 
+	<string name="export_ods">Export entries as ODS</string> 
+	<string name="export_png">Export chart as PNG</string> 
+	<string name="exported_to">Exported to %s</string> 
+	<string name="failed_open_file">Failed to open or read from file %s</string> 
+	<string name="failed_save_file">Failed to create or write to file %s</string> 
+	<string name="file_input">File:</string> 
+	<string name="file_not_found">File not found: %s</string> 
+	<string name="free_software_license">Free software license</string> 
+	<string name="ft">ft</string> 
+	<string name="height">Height</string> 
+	<string name="height_cm">%d cm</string> 
+	<string name="height_ft">%d ft</string> 
+	<string name="height_input">Height:</string> 
+	<string name="height_unit">Height unit</string> 
+	<string name="height_unit_input">Height unit:</string> 
+	<string-array name="height_unit_labels">
+	<item>centimeter</item> 
+	<item>foot</item> 
+	</string-array>
+	<string-array name="height_unit_values">
+	<item>cm</item> 
+	<item>ft</item> 
+	</string-array>
+	<string name="import_">Import</string> 
+	<string name="import_csv">Import entries from CSV</string> 
+	<string name="imported_from">Imported from %s</string> 
+	<string name="in">in</string> 
+	<string name="invalid_days">Invalid number of days</string> 
+	<string name="invalid_file_format">Invalid file format</string> 
+	<string name="invalid_height">Invalid height</string> 
+	<string name="invalid_size">Invalid size</string> 
+	<string name="invalid_weight">Invalid weight</string> 
+	<string name="kg">kg</string> 
+	<string name="lb">lb</string> 
+	<string name="legend">Legend</string> 
+	<string name="license_description">Weight Chart\nCopyright 2010\n\nWeight Chart is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.\n\nWeight Chart is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.\n\nSee http://www.gnu.org/licenses/</string> 
+	<string name="license_summary">GNU General Public License version 3 or later</string> 
+	<string name="media_not_available">SD card is not available</string> 
+	<string name="menu_file">File</string> 
+	<string name="no_entries">No entries</string> 
+	<string name="days_input">Number of days to show:</string> 
+	<string name="ok">OK</string> 
+	<string name="preferences">Preferences</string> 
+	<string name="question_delete_all">Delete all entries? This cannot be undone.</string> 
+	<string name="set_manually">Set manually</string> 
+	<string name="share_file">Share file</string> 
+	<string name="size_input">Size:</string> 
+	<string name="skip">Skip</string> 
+	<string name="st">st</string> 
+	<string name="tap_to_open_menu">Tap to open menu</string> 
+	<string name="time">Time</string> 
+	<string name="transparency">Transparency</string> 
+	<string name="view">View</string> 
+	<string name="view_14_days">View 14 days</string> 
+	<string name="view_21_days">View 21 days</string> 
+	<string name="view_30_days">View 30 days</string> 
+	<string name="view_60_days">View 60 days</string> 
+	<string name="view_90_days">View 90 days</string> 
+	<string name="view_7_days">View 7 days</string> 
+	<string name="website">Website</string> 
+	<string name="website_url">http://fredrik.jemla.eu/weightchart</string> 
+	<string-array name="weekdays">
+	<item>mo</item> 
+	<item>tu</item> 
+	<item>we</item> 
+	<item>th</item> 
+	<item>fr</item> 
+	<item>sa</item> 
+	<item>su</item> 
+	</string-array>
+	<string name="weight">Weight</string> 
+	<string name="weight_added">Weight added</string> 
+	<string name="weight_kg">%.1f kg</string> 
+	<string name="weight_kg_legend">First weight of the day (kg)</string> 
+	<string name="weight_lb">%.1f lb</string> 
+	<string name="weight_lb_legend">First weight of the day (lb)</string> 
+	<string name="weight_st">%d st</string> 
+	<string name="weight_st_legend">First weight of the day (st)</string> 
+	<string name="weight_unit">Weight unit</string> 
+	<string-array name="weight_unit_labels">
+	<item>kilogram</item> 
+	<item>pound</item> 
+	<item>stone</item> 
+	</string-array>
+	<string-array name="weight_unit_values">
+	<item>kg</item> 
+	<item>lb</item> 
+	<item>st</item> 
+	</string-array>
+	
+<string name="learn_text">\nChildhood obesity is a condition where excess body fat negatively affects a child\'s health or wellbeing. As methods to determine body fat directly are difficult, the diagnosis of obesity is often based on BMI. Due to the rising prevalence of obesity in children and its many adverse health effects it is being recognized as a serious public health concern. The term overweight rather than obese is often used in children as it is less stigmatizing.\n</string>
+<string name="logIn_tab">\nWelcome User! \n\nYou have this many minutes of TV Time.\n</string>
+<string name="logIn_activity">Log In</string>
+<string name="timeLeftString1">You have</string>
+<string name="timeLeftString2">minutes of TV Time left</string>
+</resources>

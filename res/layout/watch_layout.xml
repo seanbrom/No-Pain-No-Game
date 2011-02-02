@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+			android:id="@+id/WatchScrollView"
+			android:layout_width="fill_parent"
+			android:layout_height="fill_parent" >
+<LinearLayout android:layout_width="fill_parent" 
+              android:layout_height="fill_parent" 
+              android:orientation="vertical" >   
+              
+    <ImageView android:layout_width="fill_parent"
+		   android:layout_height="fill_parent"
+		   android:paddingTop="1px"
+		   android:gravity="center_horizontal"
+		   android:src="@drawable/npng" />            
+              
+    <TextView android:id="@+id/startText"
+	          android:layout_width="fill_parent"
+	          android:layout_height="wrap_content"
+	          android:gravity="center"
+	          style="@style/TextStyle"
+	          android:textStyle="bold"
+	          android:text="@string/watch_start" />
+              
+    <Button android:id="@+id/startButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/watch_start_button" />
+            
+    <TextView android:id="@+id/stopText"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:gravity="center"
+		   style="@style/TextStyle"
+		   android:textStyle="bold"
+		   android:text="@string/watch_stop" /> 
+            
+    <Button android:id="@+id/stopButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/watch_stop_button" />
+    
+    <TextView android:id="@+id/timeLeftString1"
+	          android:layout_width="fill_parent"
+	          android:layout_height="wrap_content"
+	          android:gravity="center"
+	          style="@style/TextStyle"
+	          android:textStyle="bold"
+	          android:text="@string/timeLeftString1" />
+            
+    <TextView android:id="@+id/timeLeft"
+	          android:layout_width="fill_parent"
+	          android:layout_height="wrap_content"
+	          android:gravity="center"
+	          style="@style/NumStyle"
+	          android:textStyle="bold" />
+	          
+	<TextView android:id="@+id/timeLeftString2"
+	          android:layout_width="fill_parent"
+	          android:layout_height="wrap_content"
+	          android:gravity="center"
+	          style="@style/TextStyle"
+	          android:textStyle="bold"
+	          android:text="@string/timeLeftString2" />
+            
+</LinearLayout>
+</ScrollView>
