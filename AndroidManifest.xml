@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="edu.ucla.cs.nopainnogame"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="7" /> 
+    <permission android:name="edu.ucla.cs.nopainnogame.pedometer.StepService" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"
+    				 android:permission="edu.ucla.cs.nopainnogame.pedometer.StepService" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <application android:icon="@drawable/pam_logo" android:label="@string/my_app_name" android:debuggable="true">
+        <activity android:name=".NoPainNoGame"
+        		  android:label="@string/my_app_name"
+          		  android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <activity android:name=".HomeActivity"
+        		  android:label="@string/home_activity" 
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>   
+        
+        <activity android:name=".LogInActivity"
+        		  android:label="@string/logIn_activity"
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>    
+            
+        <activity android:name=".PedometerActivity"
+        		  android:label="@string/pedometer_activity"
+        		  android:permission="edu.ucla.cs.nopainnogame.pedometer.StepService"
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>  
+              
+        <activity android:name=".LearnActivity"
+        		  android:label="@string/learn_activity"
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>  
+             
+        <activity android:name=".WatchActivity"
+        		  android:label="@string/watch_activity"
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>
+                  
+        
+        <activity android:name=".weightchart.ChartActivity" 
+        		  android:configChanges="orientation|keyboardHidden|keyboard" />
+        <activity android:name=".weightchart.EntryActivity"
+        		  android:configChanges="orientation|keyboardHidden|keyboard" /> 
+  		<activity android:name=".weightchart.EntryListActivity"
+  				  android:configChanges="orientation|keyboardHidden|keyboard" /> 
+  		<activity android:name=".weightchart.LegendActivity"
+  				  android:configChanges="orientation|keyboardHidden|keyboard" /> 
+  		<activity android:name=".weightchart.PreferencesActivity"
+  				  android:configChanges="orientation|keyboardHidden|keyboard" /> 
+        
+         
+        <activity android:name=".pedometer.Settings"
+                  android:label="@string/activity_settings"
+                  android:configChanges="orientation|keyboardHidden|keyboard">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".pedometer.StepService"/>
+    </application>
+
+
+</manifest> 
