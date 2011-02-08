@@ -1,0 +1,9 @@
+<html>
+  <head><title>NPNG</title></head>
+  <body>
+    <p><b>Physical exercise</b> is any bodily activity that enhances or maintains physical fitness and overall health or wellness. It is performed for various reasons. These include strengthening muscles and the cardiovascular system, honing athletic skills, weight loss or maintenance and for enjoyment.  <b>Childhood obesity</b> is a growing global concern and physical exercise may help decrease the effects of childhood obesity in developed countries. Frequent and regular physical exercise boosts the immune system, and helps prevent the "diseases of affluence" such as heart disease, cardiovascular disease, Type 2 diabetes and obesity. It also improves mental health, helps prevent depression, helps to promote or maintain positive self-esteem, and can even augment an individual's sex appeal or body image, which again is also linked with higher levels of self-esteem.</p>
+
+    <p><a href="http://en.wikipedia.org/wiki/Exercise">Read more</a></p>
+  </body>
+
+</html>
