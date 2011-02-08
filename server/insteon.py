@@ -8,6 +8,7 @@ It can turn the outlet on and off.
 
 Note: This script requires the pySerial module for serial communication
 '''
+
 import serial
 
 def main():
