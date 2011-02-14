@@ -44,6 +44,11 @@
         		  android:label="@string/watch_activity"
         		  android:configChanges="orientation|keyboardHidden|keyboard">
         </activity>
+        
+        <activity android:name=".ProgressActivity"
+        		  android:label="@string/progress_activity"
+        		  android:configChanges="orientation|keyboardHidden|keyboard">
+        </activity>
                   
         
         <activity android:name=".weightchart.ChartActivity" 

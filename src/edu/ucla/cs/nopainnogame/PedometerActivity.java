@@ -17,10 +17,16 @@
 
 package edu.ucla.cs.nopainnogame;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import android.app.Activity;
 import android.content.ComponentName;
@@ -81,14 +87,11 @@ public class PedometerActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         mStepValue = 0;
         mPaceValue = 0;
 
         setContentView(R.layout.pedometer_layout);
-
         startStepService();
-        
         setData();
         if(!isLoggedIn){
         	Toast.makeText(PedometerActivity.this, "Please log in at the Home tab.", Toast.LENGTH_SHORT).show();
@@ -102,11 +105,9 @@ public class PedometerActivity extends Activity {
     	user = HomeActivity.getName();
     	if(!user.equals("")){
 	    	isLoggedIn = true;
-        }
-        else {
+        } else {
         	isLoggedIn = false;
         }
-    	
     	if(isLoggedIn){
     		tv_time = getTvTime(user);
     	}
@@ -132,7 +133,7 @@ public class PedometerActivity extends Activity {
     	String filename = userName + "_tvtime";
     	FileOutputStream fos;
 		try {
-			fos = openFileOutput(filename, Context.MODE_WORLD_WRITEABLE);
+			fos = openFileOutput(filename, Context.MODE_PRIVATE);
 			fos.write(newTime);
         	fos.close();
 		} catch (FileNotFoundException fe) {
@@ -143,10 +144,64 @@ public class PedometerActivity extends Activity {
 		}
     }
     
+    public void setFileData(String userName, String fileSuffix, String today, int value){
+    	String filename = userName + fileSuffix;
+    	FileOutputStream fos;
+    	InputStream is;
+    	int numBytes = 0;
+    	//String test = "";//for debugging
+		try {
+			is = openFileInput(filename);
+			numBytes = is.available();
+			InputStreamReader ir = new InputStreamReader(is);
+			char[] buf = new char [numBytes];
+			ir.read(buf);
+			fos = openFileOutput(filename, Context.MODE_PRIVATE);
+			String data = today+" "+value+"\n";
+			data = data+String.valueOf(buf);
+			fos.write(data.getBytes());
+			//fos.write(test.getBytes());//for debugging
+			fos.flush();
+			ir.close();
+			is.close();			
+        	fos.close();	
+		} catch (FileNotFoundException fe) {
+			System.err.println("Error: User file not found.");
+			fe.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
+    
+    public void getSteps(String userName){
+		try {
+			InputStream instream = openFileInput(userName+"_steps.txt");
+			if(!instream.equals(null)){
+				InputStreamReader inputreader = new InputStreamReader(instream);
+				BufferedReader buffreader = new BufferedReader(inputreader);
+				String line;
+				while ((line = buffreader.readLine()) != null) {
+					System.out.println(line);
+				}
+			}
+			instream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} 
+    }
+    
     private OnClickListener submitListener = new OnClickListener() {
     	public void onClick(View v) {
     		if(isLoggedIn){
-	    		//TODO: log distance/steps with date
+	    		//log distance/steps with date
+    			DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+    			Date date = new Date();
+    			String today = dateFormat.format(date);
+    			setFileData(user, "_steps.txt", today, mStepValue);
+    			setFileData(user, "_calories.txt", today, mCaloriesValue);
+    			//getSteps(user);
 	    		
 	    		//calculate TV time from calories/steps
 	    		int newTvTime = mCaloriesValue; //TODO: change this later

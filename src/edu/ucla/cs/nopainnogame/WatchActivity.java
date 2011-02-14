@@ -21,6 +21,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -42,6 +47,7 @@ public class WatchActivity extends Activity {
 	
 	public static String user;
 	public static int tv_time;
+	int start_time;
 	public boolean viewing;
 	boolean isLoggedIn;
     TextView timeLeftView;
@@ -53,9 +59,6 @@ public class WatchActivity extends Activity {
         
         viewing = false;
         setData();
-        if(!isLoggedIn){
-        	Toast.makeText(WatchActivity.this, "Please log in at the Home tab.", Toast.LENGTH_SHORT).show();
-        }
         
         Button startButton = (Button)findViewById(R.id.startButton);
         startButton.setOnClickListener(startListener);
@@ -134,6 +137,35 @@ public class WatchActivity extends Activity {
 			e.printStackTrace();
 		}
     }
+    
+    public void setFileData(String userName, String fileSuffix, String today, int value){
+    	String filename = userName + fileSuffix;
+    	FileOutputStream fos;
+    	InputStream is;
+    	int numBytes = 0;
+    	//String test = "";//for debugging
+		try {
+			is = openFileInput(filename);
+			numBytes = is.available();
+			InputStreamReader ir = new InputStreamReader(is);
+			char[] buf = new char [numBytes];
+			ir.read(buf);
+			fos = openFileOutput(filename, Context.MODE_PRIVATE);
+			String data = today+" "+value+"\n";
+			data = data+String.valueOf(buf);
+			fos.write(data.getBytes());
+			//fos.write(test.getBytes());//for debugging
+			fos.flush();
+			ir.close();
+			is.close();			
+        	fos.close();	
+		} catch (FileNotFoundException fe) {
+			System.err.println("Error: User file not found.");
+			fe.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    }
 
     private OnClickListener startListener = new OnClickListener() {
     	public void onClick(View v) {
@@ -164,9 +196,10 @@ public class WatchActivity extends Activity {
 					if(statusCode == 200){
 						//Success
 						counter.start();
+						start_time = tv_time;
+						System.out.println("Start time: "+start_time);
 						Toast.makeText(WatchActivity.this, "Your TV time has started", Toast.LENGTH_SHORT).show();
 					} else {
-						//TODO: did not work, alert the user
 						Toast.makeText(WatchActivity.this, "Unable to reach automation hardware.", Toast.LENGTH_SHORT).show();
 						viewing = false;
 					}	
@@ -201,14 +234,19 @@ public class WatchActivity extends Activity {
 	    		HttpPost stopPost = new HttpPost("http://npng.dyndns.org/stop/"+Integer.toString(tv_time));
 	    		try {
 					HttpResponse stopResponse = httpclient.execute(stopPost);
-					int statusCode = stopResponse.getStatusLine().getStatusCode();
-					//String statusReason = stopResponse.getStatusLine().getReasonPhrase();
-					//int time_left = Integer.parseInt(statusReason);			
+					int statusCode = stopResponse.getStatusLine().getStatusCode();			
 					if(statusCode == 200){
 						//Success
-						//tv_time = time_left;
-						//setTvTime(time_left, user);
 		    			Toast.makeText(WatchActivity.this, "Your TV Time has been stopped", Toast.LENGTH_SHORT).show();
+		    			DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
+		    			Date date = new Date();
+		    			String today = dateFormat.format(date);
+		    			tv_time = getTvTime(user);
+		    			int time_watched = start_time - tv_time;
+		    			System.out.println("Stop start_time: "+start_time);
+		    			System.out.println("stop tv_time: "+tv_time);
+		    			System.out.println("Time watched: "+time_watched);
+		    			setFileData(user, "_timewatched.txt", today, time_watched);
 					} else {
 						//did not work, alert the user
 						Toast.makeText(WatchActivity.this, "Unable to reach automation hardware.", Toast.LENGTH_SHORT).show();
@@ -240,8 +278,8 @@ public class WatchActivity extends Activity {
 		@Override
 		public void onFinish() {
 			timeLeftView.setText("Out of Time");
-			stopRoutine();
 			setTvTime(0, user);
+			stopRoutine();
 		}
 
 		@Override

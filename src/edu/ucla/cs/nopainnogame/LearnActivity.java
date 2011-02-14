@@ -47,17 +47,6 @@ public class LearnActivity extends Activity {
         super.onCreate(savedInstanceState);
         getWindow().requestFeature(Window.FEATURE_PROGRESS);
         setContentView(R.layout.learn_layout);
-        
-        setData();
-        if(!isLoggedIn){
-        	Toast.makeText(LearnActivity.this, "Please log in at the Home tab.", Toast.LENGTH_SHORT).show();
-        }
-        
-        System.out.println("isViewing: "+isViewing);
-        if(!isViewing){
-        	createWebView();
-        	isViewing = true;
-        }
               
         Button learnButton = (Button)findViewById(R.id.learnButton);
         learnButton.setOnClickListener(learnListener);
@@ -66,6 +55,7 @@ public class LearnActivity extends Activity {
     @Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
 	  savedInstanceState.putBoolean("viewingBoolean", isViewing);
+	  savedInstanceState.putInt("currentFile", current_file);
 	  super.onSaveInstanceState(savedInstanceState);
 	}
 	
@@ -73,13 +63,25 @@ public class LearnActivity extends Activity {
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 	  super.onRestoreInstanceState(savedInstanceState);
 	  isViewing = savedInstanceState.getBoolean("viewingBoolean");
-	  System.out.println("Restore boolean: " + isViewing);
+	  current_file = savedInstanceState.getInt("currentFile");
 	}
     
     @Override
     protected void onResume() {
         super.onResume();
         setData();
+        if(isViewing){
+        	if(current_file == 1){
+        		current_file = max_file;
+        	} else {
+        		current_file--;
+        	}
+        	setCurrentFile(current_file, user);
+        	createWebView();
+        } else {
+        	createWebView();
+        	isViewing = true;
+        }
     }
     
     public void setData(){
@@ -129,7 +131,8 @@ public class LearnActivity extends Activity {
         		current_file = (current_file+1);
         		setCurrentFile(current_file, user);	
         	} else {
-        		setCurrentFile(1, user);
+        		current_file = 1;
+        		setCurrentFile(current_file, user);
         	}
         } else {
         	webView.loadUrl("http://npng.dyndns.org/learn/1");

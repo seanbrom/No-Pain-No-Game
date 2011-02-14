@@ -235,4 +235,11 @@
 <string name="logIn_activity">Log In</string>
 <string name="timeLeftString1">You have</string>
 <string name="timeLeftString2">minutes of TV Time left</string>
+<string name="progress_activity">Progress Activity</string>
+
+<string name="chart_type">Chart Type</string>
+<string name="step_chart">View steps per day</string>
+<string name="calorie_chart">View calories per day</string>
+<string name="tv_chart">View minutes used per day</string>
+<string name="weight_graph">View daily weight graph</string>
 </resources>

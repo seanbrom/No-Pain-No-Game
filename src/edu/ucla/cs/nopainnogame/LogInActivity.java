@@ -78,7 +78,7 @@ public class LogInActivity extends Activity {
     	int time = 0;
     	FileOutputStream fos;
     	try {
-			fos = openFileOutput(tv_filename, Context.MODE_WORLD_WRITEABLE);
+			fos = openFileOutput(tv_filename, Context.MODE_PRIVATE);
 			fos.write(time);
 			System.out.println("A user account has been created for "+userName.toString());
         	fos.close();
@@ -87,22 +87,31 @@ public class LogInActivity extends Activity {
 		}
 		
 		//Create Num_Steps persistent file
-		String steps_filename = userName.toString() + "_steps";
-    	int steps = 0;
+		String steps_filename = userName.toString() + "_steps.txt";
+		String data = "";
     	try {
-			fos = openFileOutput(steps_filename, Context.MODE_WORLD_WRITEABLE);
-			fos.write(steps);
+			fos = openFileOutput(steps_filename, Context.MODE_PRIVATE);
+			fos.write(data.getBytes());
+        	fos.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		//Create Num_Calories persistent file
+		String calories_filename = userName.toString() + "_calories.txt";
+    	try {
+			fos = openFileOutput(calories_filename, Context.MODE_PRIVATE);
+			fos.write(data.getBytes());
         	fos.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 		
 		//Create Time_Watched persistent file
-		String time_filename = userName.toString() + "_time";
-    	int date = 0;
+		String time_filename = userName.toString() + "_timewatched.txt";
     	try {
-			fos = openFileOutput(time_filename, Context.MODE_WORLD_WRITEABLE);
-			fos.write(date);
+			fos = openFileOutput(time_filename, Context.MODE_PRIVATE);
+			fos.write(data.getBytes());
         	fos.close();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -112,7 +121,7 @@ public class LogInActivity extends Activity {
 		String fileNum_filename = userName.toString() + "_currentfile";
     	int fileNum = 1;
     	try {
-			fos = openFileOutput(fileNum_filename, Context.MODE_WORLD_WRITEABLE);
+			fos = openFileOutput(fileNum_filename, Context.MODE_PRIVATE);
 			fos.write(fileNum);
         	fos.close();
 		} catch (IOException e) {

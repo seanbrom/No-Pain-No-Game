@@ -17,7 +17,6 @@
 
 package edu.ucla.cs.nopainnogame;
 
-import edu.ucla.cs.nopainnogame.weightchart.ChartActivity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
@@ -67,7 +66,7 @@ public class NoPainNoGame extends TabActivity {
                       .setContent(intent);
         tabHost.addTab(spec);
         
-        intent = new Intent().setClass(this, ChartActivity.class);
+        intent = new Intent().setClass(this, ProgressActivity.class);
         spec = tabHost.newTabSpec("progress").setIndicator("Progress",
                           res.getDrawable(R.drawable.ic_tab_progress))
                       .setContent(intent);

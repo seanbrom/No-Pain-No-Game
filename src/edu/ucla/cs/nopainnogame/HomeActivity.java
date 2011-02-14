@@ -37,18 +37,16 @@ public class HomeActivity extends Activity {
 	public static String user;
 	public static boolean loggedin = false;
 	public final int LOG_IN = 1;
+	public boolean LOG_LAUNCH = false;
 	
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        if(!loggedin){
-        	callLoginActivity();
-        }
     }
 	
 	@Override
 	public void onSaveInstanceState(Bundle savedInstanceState) {
 	  savedInstanceState.putBoolean("loginBoolean", loggedin);
+	  savedInstanceState.putBoolean("loginLaunchBoolean", LOG_LAUNCH);
 	  super.onSaveInstanceState(savedInstanceState);
 	}
 	
@@ -56,12 +54,18 @@ public class HomeActivity extends Activity {
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 	  super.onRestoreInstanceState(savedInstanceState);
 	  loggedin = savedInstanceState.getBoolean("loginBoolean");
+	  LOG_LAUNCH = savedInstanceState.getBoolean("loginLaunchBoolean");
 	}
 	
 	@Override
     protected void onResume() {
         super.onResume();
-        createLayout();
+        if(!loggedin && !LOG_LAUNCH){
+        	callLoginActivity();
+        	LOG_LAUNCH = true;
+        } else {
+        	createLayout();
+        }
     }
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data){
@@ -70,6 +74,7 @@ public class HomeActivity extends Activity {
 			user = data.getStringExtra("user");
 			loggedin = true;
 			createLayout(); 
+			break;
 		default:
 			break;
 		}

@@ -89,6 +89,7 @@ public final class R {
         public static final int box_steps=0x7f0c0022;
         public static final int button_desired_pace_lower=0x7f0c0037;
         public static final int button_desired_pace_raise=0x7f0c0034;
+        public static final int calorie_chart=0x7f0c0058;
         public static final int calories_units=0x7f0c0031;
         public static final int calories_value=0x7f0c0030;
         public static final int chart=0x7f0c0000;
@@ -138,6 +139,7 @@ public final class R {
         public static final int speed_value=0x7f0c002d;
         public static final int startButton=0x7f0c003f;
         public static final int startText=0x7f0c003e;
+        public static final int step_chart=0x7f0c0057;
         public static final int step_units=0x7f0c0024;
         public static final int step_value=0x7f0c0023;
         public static final int stopButton=0x7f0c0041;
@@ -148,6 +150,7 @@ public final class R {
         public static final int timeLeftString1=0x7f0c0042;
         public static final int timeLeftString2=0x7f0c0044;
         public static final int transparency=0x7f0c000f;
+        public static final int tv_chart=0x7f0c0059;
         public static final int view_14_days=0x7f0c0047;
         public static final int view_21_days=0x7f0c0048;
         public static final int view_30_days=0x7f0c0049;
@@ -155,6 +158,7 @@ public final class R {
         public static final int view_7_days=0x7f0c0046;
         public static final int view_90_days=0x7f0c004b;
         public static final int weight=0x7f0c003a;
+        public static final int weight_graph=0x7f0c005a;
         public static final int weight_major=0x7f0c0001;
         public static final int weight_minor=0x7f0c0003;
         public static final int weight_unit_major=0x7f0c0002;
@@ -180,6 +184,7 @@ public final class R {
         public static final int chart=0x7f0b0000;
         public static final int entries=0x7f0b0001;
         public static final int entry=0x7f0b0002;
+        public static final int progress=0x7f0b0003;
     }
     public static final class plurals {
         public static final int entry_count=0x7f090000;
@@ -198,9 +203,11 @@ public final class R {
         public static final int body_weight_setting=0x7f08002f;
         public static final int body_weight_setting_details=0x7f080030;
         public static final int body_weight_setting_title=0x7f080031;
+        public static final int calorie_chart=0x7f0800be;
         public static final int calories_burned=0x7f08000c;
         public static final int cancel=0x7f08006a;
         public static final int centimeters=0x7f08000d;
+        public static final int chart_type=0x7f0800bc;
         public static final int close=0x7f08006b;
         public static final int cm=0x7f08006c;
         public static final int count_entries=0x7f08006d;
@@ -300,6 +307,7 @@ public final class R {
         public static final int pedometer_activity=0x7f08005b;
         public static final int pounds=0x7f080010;
         public static final int preferences=0x7f08009a;
+        public static final int progress_activity=0x7f0800bb;
         public static final int question_delete_all=0x7f08009b;
         public static final int quit=0x7f080056;
         public static final int reset=0x7f080015;
@@ -319,6 +327,7 @@ public final class R {
         public static final int speaking_interval_setting_details=0x7f080041;
         public static final int st=0x7f0800a0;
         public static final int started=0x7f080004;
+        public static final int step_chart=0x7f0800bd;
         public static final int step_length_setting=0x7f08002c;
         public static final int step_length_setting_details=0x7f08002d;
         public static final int step_length_setting_title=0x7f08002e;
@@ -344,6 +353,7 @@ public final class R {
         public static final int timeLeftString1=0x7f0800b9;
         public static final int timeLeftString2=0x7f0800ba;
         public static final int transparency=0x7f0800a3;
+        public static final int tv_chart=0x7f0800bf;
         public static final int units_imperial=0x7f08002b;
         public static final int units_metric=0x7f08002a;
         public static final int units_setting=0x7f080027;
@@ -371,6 +381,7 @@ public final class R {
         public static final int website_url=0x7f0800ac;
         public static final int weight=0x7f0800ad;
         public static final int weight_added=0x7f0800ae;
+        public static final int weight_graph=0x7f0800c0;
         public static final int weight_kg=0x7f0800af;
         public static final int weight_kg_legend=0x7f0800b0;
         public static final int weight_lb=0x7f0800b1;

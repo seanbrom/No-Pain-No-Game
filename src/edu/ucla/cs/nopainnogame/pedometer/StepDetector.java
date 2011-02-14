@@ -24,7 +24,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.util.Log;
+//import android.util.Log;
 
 /**
  * Detects steps and notifies all listeners (that implement StepListener).
@@ -33,7 +33,7 @@ import android.util.Log;
  */
 public class StepDetector implements SensorEventListener
 {
-    private final static String TAG = "edu.ucla.cs.nopainnogame.StepDetector";
+    //private final static String TAG = "edu.ucla.cs.nopainnogame.StepDetector";
     private int     mLimit = 30;
     private float   mLastValues[] = new float[3*2];
     private float   mScale[] = new float[2];
@@ -92,7 +92,7 @@ public class StepDetector implements SensorEventListener
                             boolean isNotContra = (mLastMatch != 1 - extType);
                             
                             if (isAlmostAsLargeAsPrevious && isPreviousLargeEnough && isNotContra) {
-                                Log.i(TAG, "step");
+                                //TODO: Log.i(TAG, "step");
                                 for (StepListener stepListener : mStepListeners) {
                                     stepListener.onStep();
                                 }
