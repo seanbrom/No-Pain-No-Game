@@ -158,7 +158,6 @@ public final class R {
         public static final int view_7_days=0x7f0c0046;
         public static final int view_90_days=0x7f0c004b;
         public static final int weight=0x7f0c003a;
-        public static final int weight_graph=0x7f0c005a;
         public static final int weight_major=0x7f0c0001;
         public static final int weight_minor=0x7f0c0003;
         public static final int weight_unit_major=0x7f0c0002;
@@ -238,6 +237,12 @@ public final class R {
         public static final int file_not_found=0x7f08007e;
         public static final int free_software_license=0x7f08007f;
         public static final int ft=0x7f080080;
+        public static final int health_info1=0x7f0800c1;
+        public static final int health_info2=0x7f0800c2;
+        public static final int health_info3=0x7f0800c3;
+        public static final int health_info4=0x7f0800c4;
+        public static final int health_info5=0x7f0800c5;
+        public static final int health_info6=0x7f0800c6;
         public static final int height=0x7f080081;
         public static final int height_cm=0x7f080082;
         public static final int height_ft=0x7f080083;

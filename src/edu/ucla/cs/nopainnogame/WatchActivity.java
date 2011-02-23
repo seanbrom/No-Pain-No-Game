@@ -187,7 +187,7 @@ public class WatchActivity extends Activity {
     			viewing = true;
 	    		counter = new MyCount((tv_time*1000), 1000);
 	    		HttpClient httpclient = new DefaultHttpClient();    		
-	    		HttpPost startPost = new HttpPost("http://npng.dyndns.org/start/"+(Integer.toString(tv_time)+5));
+	    		HttpPost startPost = new HttpPost("http://"+user+"npng.dyndns-server.com/start/"+(Integer.toString(tv_time)+5));
 	    		//in the above line, add 5 to the tv time to provide a time buffer to allow phone to turn outlet off
 	    		//if the phone doesn't, the server will for redundancy
 	    		try {
@@ -197,19 +197,16 @@ public class WatchActivity extends Activity {
 						//Success
 						counter.start();
 						start_time = tv_time;
-						System.out.println("Start time: "+start_time);
 						Toast.makeText(WatchActivity.this, "Your TV time has started", Toast.LENGTH_SHORT).show();
 					} else {
 						Toast.makeText(WatchActivity.this, "Unable to reach automation hardware.", Toast.LENGTH_SHORT).show();
 						viewing = false;
 					}	
 				} catch (ClientProtocolException e) {
-					System.out.println("START PROTOCOL EXCEPTION");
 					Toast.makeText(WatchActivity.this, "Unable to reach web server.", Toast.LENGTH_SHORT).show();
 					viewing = false;
 					e.printStackTrace();
 				} catch (IOException e) {
-					System.out.println("START IO EXCEPTION");
 					Toast.makeText(WatchActivity.this, "Unable to reach web server.", Toast.LENGTH_SHORT).show();
 					viewing = false;
 					e.printStackTrace();
@@ -220,8 +217,6 @@ public class WatchActivity extends Activity {
     			Toast.makeText(WatchActivity.this, "You do not have enough TV Time.", Toast.LENGTH_SHORT).show();
     		} else if(!isLoggedIn){
     			Toast.makeText(WatchActivity.this, "Please log in at the Home tab.", Toast.LENGTH_SHORT).show();
-    		} else {
-    			System.out.print("Fell through if/else");
     		}
     }
     
@@ -231,7 +226,7 @@ public class WatchActivity extends Activity {
     			counter.cancel();
 	    		
 	    		HttpClient httpclient = new DefaultHttpClient();
-	    		HttpPost stopPost = new HttpPost("http://npng.dyndns.org/stop/"+Integer.toString(tv_time));
+	    		HttpPost stopPost = new HttpPost("http://"+user+"npng.dyndns-server.com/stop/"+Integer.toString(tv_time));
 	    		try {
 					HttpResponse stopResponse = httpclient.execute(stopPost);
 					int statusCode = stopResponse.getStatusLine().getStatusCode();			

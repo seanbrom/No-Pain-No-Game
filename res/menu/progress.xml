@@ -12,9 +12,9 @@
             <item
               android:id="@+id/tv_chart"
               android:title="@string/tv_chart"/>
-            <item
+            <!-- <item
               android:id="@+id/weight_graph"
-              android:title="@string/weight_graph"/>
+              android:title="@string/weight_graph"/> -->
         </menu>
     </item>
     

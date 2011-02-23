@@ -25,6 +25,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -79,46 +80,39 @@ public class ProgressActivity extends Activity {
 		    //Select type of chart
 		    case R.id.step_chart:
 		        CHART_TYPE = 0;
-		        System.out.println("Chart type: "+CHART_TYPE);
 		        createView();
 		        return true;
 		    case R.id.calorie_chart:
 		        CHART_TYPE = 1;
-		    	System.out.println("Chart type: "+CHART_TYPE);        
 		        createView();
 		        return true;
 		    case R.id.tv_chart:
 		        CHART_TYPE = 2;
-		        System.out.println("Chart type: "+CHART_TYPE);
 		        createView();
 		        return true;
-		    case R.id.weight_graph:
+		    /*case R.id.weight_graph:
 		        CHART_TYPE = 3;
-		        System.out.println("Chart type: "+CHART_TYPE);
 		        createView();
-		        return true;
+		        return true;*/
 		        
 		    //Select Number of Days    
 		    case R.id.view_7_days:
 		        DATA_POINTS = 7;
-		        System.out.println("Data points: "+DATA_POINTS);
 		        createView();
 		        return true;
 		    case R.id.view_14_days:
 		    	DATA_POINTS = 14;
-		    	System.out.println("Data points: "+DATA_POINTS);
 		    	createView();
 		        return true;
 		    case R.id.view_21_days:
 		    	DATA_POINTS = 21;
-		    	System.out.println("Data points: "+DATA_POINTS);
 		    	createView();
 		        return true;
 		    case R.id.view_30_days:
 		    	DATA_POINTS = 30;
 		    	System.out.println("Data points: "+DATA_POINTS);
 		    	createView();
-		        return true;
+		        return true; 
 		        
 		    default:
 		        return super.onOptionsItemSelected(item);
@@ -141,25 +135,22 @@ public class ProgressActivity extends Activity {
 		switch(CHART_TYPE){
 			case 0:
 				i = getFileData(user, "_steps.txt");
-				System.out.println("Get Steps file data");
 				chartTitle = "Steps Taken Per Day";
 				break;
 			case 1:
 				i = getFileData(user, "_calories.txt");
-				System.out.println("Get Calories file data");
 				chartTitle = "Calories Per Day";
 				break;
 			case 2:
 				i = getFileData(user, "_timewatched.txt");
-				System.out.println("Get TV file data");
 				chartTitle = "Minutes Watched Per Day";
 				break;
 			case 3:
 				//TODO: weight chart
+				callWeightChartActivity();
 				break;
 			default:
 				i = getFileData(user, "_steps.txt");
-				System.out.println("Get Default file data");
 				chartTitle = "Steps Taken Daily";
 				break;
 		}
@@ -211,9 +202,7 @@ public class ProgressActivity extends Activity {
 				while ((line = buffreader.readLine()) != null) {
 					StringTokenizer st = new StringTokenizer(line);
 					currentDate = st.nextElement().toString();
-					//System.out.println(currentDate);
 					currentVal = Float.parseFloat(st.nextElement().toString());
-					//System.out.println(currentVal);
 					
 					if(currentDate.equals(prevDate)){
 						prevVal = prevVal + currentVal;
@@ -253,8 +242,8 @@ public class ProgressActivity extends Activity {
 		return count; 
     }
 	
-	/*public void callWeightChartActivity(){
-		Intent loginIntent = new Intent(ProgressActivity.this, edu.ucla.cs.nopainnogame.weightchart.ChartActivity.class);
-        
-	}*/
+	public void callWeightChartActivity(){
+		Intent chartIntent = new Intent(ProgressActivity.this, edu.ucla.cs.nopainnogame.weightchart.ChartActivity.class);
+        startActivity(chartIntent);
+	}
 }

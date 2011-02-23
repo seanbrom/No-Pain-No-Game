@@ -39,7 +39,7 @@ public class LearnActivity extends Activity {
 	public static String user;
 	public static int tv_time;
 	public static int current_file;
-	public static int max_file = 3;
+	public static int max_file = 6;
     boolean isLoggedIn;
     public boolean isViewing = false;
 	
@@ -88,11 +88,9 @@ public class LearnActivity extends Activity {
     	user = HomeActivity.getName();
     	if(!user.equals("")){
 	    	isLoggedIn = true;
-        }
-        else {
+        } else {
         	isLoggedIn = false;
         }
-    	
     	if(isLoggedIn){
     		tv_time = getTvTime(user);
     	}
@@ -126,7 +124,8 @@ public class LearnActivity extends Activity {
         
         if(isLoggedIn){
         	current_file = getCurrentFile(user);
-        	webView.loadUrl("http://npng.dyndns.org/learn/"+current_file);
+        	//webView.loadUrl("http://npng.dyndns.org/learn/"+current_file);
+        	webView.loadData(fileSwitch(current_file), "text/html", "utf-8");
         	if(current_file < max_file){
         		current_file = (current_file+1);
         		setCurrentFile(current_file, user);	
@@ -135,8 +134,29 @@ public class LearnActivity extends Activity {
         		setCurrentFile(current_file, user);
         	}
         } else {
-        	webView.loadUrl("http://npng.dyndns.org/learn/1");
+        	//webView.loadUrl("http://npng.dyndns.org/learn/1");
+        	webView.loadData(fileSwitch(1), "text/html", "utf-8");
         }
+    }
+    
+    public String fileSwitch(int fileNum){
+    	Context context = this;
+    	switch(fileNum){
+    	case 1:
+    		return context.getString(R.string.health_info1);
+    	case 2:
+    		return context.getString(R.string.health_info2);
+    	case 3:
+    		return context.getString(R.string.health_info3);
+    	case 4:
+    		return context.getString(R.string.health_info4);
+    	case 5:
+    		return context.getString(R.string.health_info5);
+    	case 6:
+    		return context.getString(R.string.health_info6);
+    	default:
+    		return context.getString(R.string.health_info1);
+    	}
     }
     
     
