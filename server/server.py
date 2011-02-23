@@ -201,7 +201,8 @@ class MyHandler(BaseHTTPRequestHandler):
 def main():
     try:
         server = HTTPServer(('', 80), MyHandler)
-        print 'started httpserver...'
+        print 'Started httpserver...'
+        print 'Press Ctrl+C to exit'
         server.serve_forever()
         #server.handle_request()
     except KeyboardInterrupt:
